@@ -35,7 +35,15 @@ driver.findElement(By.linkText("Terms")).click();
         
         Thread.sleep(5000);
         
-
+driver.findElement(By.linkText("Settings")).click();
+        
+        if(driver.getPageSource().contains("Settings"))
+        	System.out.println("The test passed");
+        else
+        	System.out.println("The test failed");
+        Assert.assertEquals(true, driver.getPageSource().contains("Settings") );
+        
+        Thread.sleep(5000);
         driver.close();
         
         
